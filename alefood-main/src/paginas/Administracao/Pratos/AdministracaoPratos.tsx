@@ -16,8 +16,8 @@ const AdministracaoPratos = () => {
     const excluir = (prato: IPrato) => {
         http.delete(`pratos/${prato.id}/`)
         .then(() =>{
-            const listaPrato = pratos.filter(r => r.id !== prato.id)
-            setPratos([...listaPrato])
+            const listaPratos = pratos.filter(r => r.id !== prato.id)
+            setPratos([...listaPratos])
         })
     }
 
@@ -30,8 +30,15 @@ const AdministracaoPratos = () => {
                             Nome
                         </TableCell>
                         <TableCell>
-                            Editar
+                            Descrição
                         </TableCell>
+                        <TableCell>
+                            Tag
+                        </TableCell>
+                        <TableCell>
+                            Imagem
+                        </TableCell>
+                    
                         <TableCell>
                             Excluir
                         </TableCell>
@@ -44,8 +51,16 @@ const AdministracaoPratos = () => {
                             {r.nome}
                         </TableCell>
                         <TableCell>
-                            [ <Link to={`/admin/Pratos/${r.id}`}>editar</Link> ]
+                            {r.descricao}
                         </TableCell>
+                        <TableCell>
+                            {r.tag}
+                        </TableCell>
+                        <TableCell>
+                            <a href={r.imagem} rel="noreferer">Ver imagem</a>
+                        </TableCell>
+                        
+                        
                         <TableCell>
                            <Button variant="outlined" color="error" onClick={() => excluir(r)}>
                                 Excluir

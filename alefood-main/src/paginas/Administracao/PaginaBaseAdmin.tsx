@@ -12,14 +12,29 @@ const PaginaBaseAdmin = () => {
                 Administração
               </Typography>
               <Box sx={{ display: 'flex', flexGrow: 1 }}>
+                <Link>
+                  <Button sx={{  my: 2, mx: 5, color: 'white' }} component={RouterLink} to='/' >
+                    Voltar ao Site
+                  </Button>
+                </Link>
                 <Link component={RouterLink} to='/admin/restaurantes'>
-                  <Button sx={{ my: 2, color: 'white' }}>
+                  <Button sx={{ my: 2, mx: 5, color: 'white' }}>
                     Restaurantes
                   </Button>
                 </Link> 
                 <Link>
-                  <Button sx={{ my: 2, color: 'white' }} component={RouterLink} to='/admin/restaurantes/novo' >
+                  <Button sx={{  my: 2, mx: 5, color: 'white' }} component={RouterLink} to='/admin/restaurantes/novo' >
                     Novo Restaurante
+                  </Button>
+                </Link>
+                <Link>
+                  <Button sx={{ my: 2, mx: 5, color: 'white' }} component={RouterLink} to='/admin/pratos' >
+                    Pratos
+                  </Button>
+                </Link>
+                <Link>
+                  <Button sx={{ my: 2, mx: 5, color: 'white' }} component={RouterLink} to='/admin/pratos/novo' >
+                    Novo Prato
                   </Button>
                 </Link>
               </Box>

@@ -13,7 +13,7 @@ const FormularioRestaurante = () => {
       http.get<IRestaurante>(`restaurantes/${parametros.id}`)
         .then(r => setNomeRestaurante(r.data.nome))
     }
-  })
+  },)
 
   const [nomeRestaurante, setNomeRestaurante] = useState('');
 
